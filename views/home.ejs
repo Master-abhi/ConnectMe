@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="/css/home.css">
+
+
+        
+
+        <div id="home-container">
+                
+                <div id="post-container">
+
+                        <div id="home-tag">
+        
+                                <h3>
+                                        <% if (locals.user){%>
+                                                Welcome <%= locals.user.name %>!
+                                        <%}%>
+                                </h3>
+                        </div>
+
+                        <div id="posting-area">
+                                <% if (locals.user){%>
+                        
+                                        <section id="feed-post">
+                                                <h4>Post</h4>
+                                                <form action="/new-post" id="newPost" method="POST">
+                                                    <textarea name="content" cols="30" row="3" placeholder="Type here..."></textarea>
+                                                    <input type="submit" value="POST">
+                                                </form>
+                                            </section>
+        
+                                <%}%>
+                        </div>
+                        
+
+                        
+
+                        
+                        <h4>Post wall</h4>
+                        <div  id="post-list-container">
+                                <ul>
+                                
+                                        <% for(post of posts){%>
+                                                
+                                                <%- include('_post')-%>
+                                                
+                                        <%}%>
+                                                
+                                </ul>
+                        </div>
+                        
+                
+                </div>
+
+
+                
+                <div id="user-friends">
+                        <h4>Friends</h4>
+                        <% for (u of all_user){%>
+                                <P>
+                                        <a href="/user/<%= u.id%>"><%= u.name%></a>
+                                </P>
+                        <%}%>
+                </div>
+
+        </div>
+
+        <script src="/js/home_post.js"></script>
+                
