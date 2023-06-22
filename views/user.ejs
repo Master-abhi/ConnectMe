@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/css/user.css">
+<h1>this is user profile page of <%= all_user.name %> </h1>
+<h2> <%= all_user.email %></h2>
+<img src="<%= user.avatar %>" aria-placeholder="<%= user.name %>" width="100px">
+
+<% if (user.id == all_user.id){%>
+<h4>Update</h4>
+<form action="/update/<%= user.id%>" id="user_update" enctype="multipart/form-data" method="POST"> 
+    <input type="text" name="name" value="<%= all_user.name %>" required>
+    <input type="email" name="email" value="<%= all_user.email %>" required>
+    <input type="file" name="avatar" placeholder="Profile-picture">
+    <input type="submit" value="Update">
+</form>
+<%}%>

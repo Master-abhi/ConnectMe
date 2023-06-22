@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="https://cdn.tutorialjinni.com/noty/3.1.4/noty.min.css">
+        <link rel="stylesheet" href="/css/layout.css">
+        <script src="https://cdn.tutorialjinni.com/noty/3.1.4/noty.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <%- style %>
+    </head>
+    <body>
+        <%- include('_header'); %>
+
+        
+
+        <%- body %>
+
+        <!-- <%- include('_footer') %> -->
+        <%- script %>
+        <script>
+            <% if (flash.success && flash.success.length > 0) {%>
+                new Noty({
+                    theme: 'relax',
+                    text: "<%= flash.success %>",
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500,
+                }).show(); 
+            <%}%>
+        </script>
+        
+    </body>
+</html>

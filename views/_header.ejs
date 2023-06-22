@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/header.css">
+    <header>
+        <div>
+            <h3>ConnectMe</h3>
+        </div>
+        
+            
+        <div id="link-list">
+            <% if (locals.user){%>
+                <a href="http://localhost:8000/">Home</a>
+                <a href="http://localhost:8000/user/<%= user.id%>">User-Profile</a>
+                <a href="http://localhost:8000/post">Posts</a>
+                <a href="http://localhost:8000/signout">Sign Out</a>
+            <%}else{%>
+                <a href="http://localhost:8000/">Home</a>
+                <a href="http://localhost:8000/signup">Sign up</a>
+                <a href="http://localhost:8000/signin">Sign in</a>
+        <% }%>
+        </div>
+         
+    </header>

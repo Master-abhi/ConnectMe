@@ -1,0 +1,22 @@
+#home-container{
+    display: flex;
+    /* background-color: red ; */
+    /* height: 30px; */
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+#post-container{
+    width: 80%;
+    border-right: 1px solid black;
+    padding: 10px;
+    height: 100vh;
+
+}
+
+#user-friends{
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    /* border: 1px solid black; */
+}

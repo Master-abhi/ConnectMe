@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: lightblue;
+    padding: 10px;
+    height: 30px;
+    border-bottom: 1px solid black;
+}
+
+#link-list{
+    margin-right: 20px;
+}
+#link-list a{
+    margin: 10px;
+}
